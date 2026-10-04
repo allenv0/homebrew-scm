@@ -25,10 +25,10 @@ cask "scm" do
   # scoped to this third-party tap and will be removed once releases
   # are Developer ID signed + notarized (then Gatekeeper passes with
   # quarantine intact and no bypass is needed).
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/SCM.app"],
-                   must_succeed: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/SCM.app"],
+        must_succeed: false
   end
 
   uninstall quit: "com.allenv0.scm"
