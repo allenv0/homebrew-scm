@@ -12,8 +12,8 @@ cask "scm" do
     strategy :github_latest
   end
 
-  depends_on macos: :monterey
   depends_on arch: :arm64
+  depends_on macos: :monterey
 
   app "SCM.app"
 
@@ -27,7 +27,7 @@ cask "scm" do
   # quarantine intact and no bypass is needed).
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/SCM.app"],
+        args:         ["-dr", "com.apple.quarantine", "{{appdir}}/SCM.app"],
         must_succeed: false
   end
 
