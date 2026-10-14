@@ -1,6 +1,6 @@
 cask "scm" do
-  version "0.2.7"
-  sha256 "d17b316322017bd052beab4fea381b9340d104d9336994a6432315bb55fbc206"
+  version "0.2.8"
+  sha256 "8d50a461a18959f269120bef1b3432319f62110126f7b57e95b61e4986a3280b"
 
   url "https://github.com/allenv0/homebrew-scm/releases/download/v#{version}/SCM-#{version}-arm64.dmg"
   name "SCM"
